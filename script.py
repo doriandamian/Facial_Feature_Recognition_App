@@ -19,11 +19,11 @@ def draw_boundaries(img, classifier, scaleFactor, minNeighbors, color, text):
 
 def detect(img, faceCascade, eyesCascade, mouthCascade):
     color = {"blue": (255, 0, 0), "red": (0, 0, 255), "green": (0, 255, 0)}
-    face_coords = draw_boundaries(img, faceCascade, 1.1, 5, color['blue'], "Face")
+    face_coords = draw_boundaries(img, faceCascade, 1.1, 12, color['blue'], "Face")
     for (fx, fy, fw, fh) in face_coords:
         roi_img = img[fy:fy + fh, fx:fx + fw]
-        draw_boundaries(roi_img, eyesCascade, 1.1, 5, color['red'], "Eye")
-        draw_boundaries(roi_img, mouthCascade, 1.1, 5, color['green'], "Mouth")
+        draw_boundaries(roi_img, eyesCascade, 1.1, 22, color['red'], "Eye")
+        draw_boundaries(roi_img, mouthCascade, 1.1, 60, color['green'], "Mouth")
     return img
 
 if len(sys.argv) > 1: # Image Input
